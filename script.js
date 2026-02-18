@@ -142,6 +142,23 @@ const restartBtn = document.getElementById("restartBtn");
 
 let current = 0;
 const answers = Array(questions.length).fill(null);
+const scoreMax = {
+  drenagem: 14,
+  modeladora: 10,
+  relaxante: 14
+};
+
+function toScale10(value, max) {
+  const normalized = Math.round((value / max) * 9) + 1;
+  return Math.max(1, Math.min(10, normalized));
+}
+
+function getLevelLabel(value10) {
+  if (value10 <= 3) return "Leve";
+  if (value10 <= 6) return "Moderado";
+  if (value10 <= 8) return "Alto";
+  return "Muito alto";
+}
 
 function animateIn(element) {
   element.classList.remove("is-visible");
@@ -227,10 +244,22 @@ function getRecommendation() {
 function showResult() {
   const { key, score } = getRecommendation();
   const profile = profiles[key];
+  const score10 = {
+    drenagem: toScale10(score.drenagem, scoreMax.drenagem),
+    modeladora: toScale10(score.modeladora, scoreMax.modeladora),
+    relaxante: toScale10(score.relaxante, scoreMax.relaxante)
+  };
+
+  let dominantKey = key;
+  if (key === "combinado") {
+    dominantKey = Object.entries(score10).sort((a, b) => b[1] - a[1])[0][0];
+  }
+
+  const levelLabel = getLevelLabel(score10[dominantKey]);
 
   resultTitle.textContent = profile.title;
   resultDescription.textContent = profile.description;
-  resultExtra.textContent = `Atendimento recomendado por Daiani Oliveira. ${profile.extra} Pontuação -> Drenagem: ${score.drenagem} | Modeladora: ${score.modeladora} | Relaxante: ${score.relaxante}.`;
+  resultExtra.textContent = `Atendimento recomendado por Daiani Oliveira. ${profile.extra} Pontuação (1 a 10) -> Drenagem: ${score10.drenagem}/10 | Modeladora: ${score10.modeladora}/10 | Relaxante: ${score10.relaxante}/10. Seu nível é ${levelLabel}.`;
   resultTips.innerHTML = "";
   profile.tips.forEach((tip) => {
     const li = document.createElement("li");
