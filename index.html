@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz de Bem-Estar | Massagens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="brand-name">Daiani Oliveira</p>
+      <p class="eyebrow">Avaliacao rapida</p>
+      <h1>Qual massagem combina mais com voce hoje?</h1>
+      <p class="subtitle">
+        Responda em menos de 2 minutos e receba uma recomendacao clara para seu momento.
+      </p>
+    </section>
+
+    <section class="quiz-card" id="quizCard" aria-live="polite">
+      <header class="quiz-header">
+        <span id="questionCounter">Pergunta 1 de 8</span>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </header>
+
+      <h2 id="questionText"></h2>
+      <div id="options" class="options"></div>
+
+      <footer class="quiz-footer">
+        <button id="backBtn" class="btn btn-ghost" type="button">Voltar</button>
+        <button id="nextBtn" class="btn" type="button" disabled>Proxima</button>
+      </footer>
+    </section>
+
+    <section class="result-card hidden" id="resultCard" aria-live="polite">
+      <p class="result-label">Resultado recomendado</p>
+      <h2 id="resultTitle"></h2>
+      <p id="resultDescription"></p>
+
+      <div class="result-extra" id="resultExtra"></div>
+
+      <div class="result-actions">
+        <a id="ctaLink" class="btn" href="#">Agendar agora</a>
+        <button id="restartBtn" class="btn btn-ghost" type="button">Refazer quiz</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
