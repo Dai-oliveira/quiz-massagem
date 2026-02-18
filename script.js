@@ -1,51 +1,51 @@
 const questions = [
   {
-    text: "No final do dia, voce sente as pernas pesadas ou inchadas?",
+    text: "No final do dia, você sente as pernas pesadas ou inchadas?",
     options: [
       { label: "Quase sempre", score: { drenagem: 3, modeladora: 0, relaxante: 1 } },
-      { label: "As vezes", score: { drenagem: 2, modeladora: 0, relaxante: 1 } },
+      { label: "Às vezes", score: { drenagem: 2, modeladora: 0, relaxante: 1 } },
       { label: "Raramente", score: { drenagem: 1, modeladora: 0, relaxante: 0 } },
-      { label: "Nao sinto", score: { drenagem: 0, modeladora: 0, relaxante: 0 } }
+      { label: "Não sinto", score: { drenagem: 0, modeladora: 0, relaxante: 0 } }
     ]
   },
   {
-    text: "Seu principal objetivo hoje e:",
+    text: "Seu principal objetivo hoje é:",
     options: [
-      { label: "Reduzir inchaco", score: { drenagem: 3, modeladora: 0, relaxante: 1 } },
+      { label: "Reduzir inchaço", score: { drenagem: 3, modeladora: 0, relaxante: 1 } },
       { label: "Melhorar contorno corporal", score: { drenagem: 0, modeladora: 3, relaxante: 0 } },
-      { label: "Aliviar tensao e dor", score: { drenagem: 0, modeladora: 0, relaxante: 3 } },
+      { label: "Aliviar tensão e dor", score: { drenagem: 0, modeladora: 0, relaxante: 3 } },
       { label: "Um pouco de tudo", score: { drenagem: 1, modeladora: 1, relaxante: 1 } }
     ]
   },
   {
-    text: "Voce percebe areas de gordura localizada que incomodam?",
+    text: "Você percebe áreas de gordura localizada que incomodam?",
     options: [
       { label: "Sim, bastante", score: { drenagem: 0, modeladora: 3, relaxante: 0 } },
       { label: "Sim, moderado", score: { drenagem: 0, modeladora: 2, relaxante: 0 } },
       { label: "Pouco", score: { drenagem: 0, modeladora: 1, relaxante: 0 } },
-      { label: "Nao", score: { drenagem: 0, modeladora: 0, relaxante: 0 } }
+      { label: "Não", score: { drenagem: 0, modeladora: 0, relaxante: 0 } }
     ]
   },
   {
-    text: "Com que frequencia voce sente dores musculares (ombros, pescoco, costas)?",
+    text: "Com que frequência você sente dores musculares (ombros, pescoço, costas)?",
     options: [
       { label: "Quase todos os dias", score: { drenagem: 0, modeladora: 0, relaxante: 3 } },
       { label: "2 a 3 vezes por semana", score: { drenagem: 0, modeladora: 0, relaxante: 2 } },
-      { label: "As vezes", score: { drenagem: 0, modeladora: 0, relaxante: 1 } },
+      { label: "Às vezes", score: { drenagem: 0, modeladora: 0, relaxante: 1 } },
       { label: "Quase nunca", score: { drenagem: 0, modeladora: 0, relaxante: 0 } }
     ]
   },
   {
-    text: "Sua rotina envolve muito tempo sentada(o) ou em pe?",
+    text: "Sua rotina envolve muito tempo sentada(o) ou em pé?",
     options: [
       { label: "Sim, por muitas horas", score: { drenagem: 2, modeladora: 1, relaxante: 1 } },
       { label: "Sim, mas com pausas", score: { drenagem: 1, modeladora: 1, relaxante: 1 } },
-      { label: "Nao muito", score: { drenagem: 0, modeladora: 0, relaxante: 0 } },
-      { label: "Nao", score: { drenagem: 0, modeladora: 0, relaxante: 0 } }
+      { label: "Não muito", score: { drenagem: 0, modeladora: 0, relaxante: 0 } },
+      { label: "Não", score: { drenagem: 0, modeladora: 0, relaxante: 0 } }
     ]
   },
   {
-    text: "Como voce se sente hoje no nivel de estresse?",
+    text: "Como você se sente hoje no nível de estresse?",
     options: [
       { label: "Muito estressada(o)", score: { drenagem: 0, modeladora: 0, relaxante: 3 } },
       { label: "Moderado", score: { drenagem: 0, modeladora: 0, relaxante: 2 } },
@@ -54,53 +54,73 @@ const questions = [
     ]
   },
   {
-    text: "Voce nota retencao de liquido em abdome, maos ou rosto?",
+    text: "Você nota retenção de líquido em abdômen, mãos ou rosto?",
     options: [
-      { label: "Sim, com frequencia", score: { drenagem: 3, modeladora: 0, relaxante: 0 } },
-      { label: "As vezes", score: { drenagem: 2, modeladora: 0, relaxante: 0 } },
+      { label: "Sim, com frequência", score: { drenagem: 3, modeladora: 0, relaxante: 0 } },
+      { label: "Às vezes", score: { drenagem: 2, modeladora: 0, relaxante: 0 } },
       { label: "Raramente", score: { drenagem: 1, modeladora: 0, relaxante: 0 } },
-      { label: "Nao", score: { drenagem: 0, modeladora: 0, relaxante: 0 } }
+      { label: "Não", score: { drenagem: 0, modeladora: 0, relaxante: 0 } }
     ]
   },
   {
-    text: "Que resultado voce quer sentir logo apos a sessao?",
+    text: "Que resultado você quer sentir logo após a sessão?",
     options: [
       { label: "Corpo mais leve", score: { drenagem: 3, modeladora: 0, relaxante: 1 } },
       { label: "Silhueta mais definida", score: { drenagem: 0, modeladora: 3, relaxante: 0 } },
       { label: "Corpo e mente relaxados", score: { drenagem: 0, modeladora: 0, relaxante: 3 } },
-      { label: "Equilibrio geral", score: { drenagem: 1, modeladora: 1, relaxante: 1 } }
+      { label: "Equilíbrio geral", score: { drenagem: 1, modeladora: 1, relaxante: 1 } }
     ]
   }
 ];
 
 const profiles = {
   drenagem: {
-    title: "Drenagem Linfatica",
+    title: "Drenagem Linfática",
     description:
-      "Seu perfil indica tendencia a retencao de liquidos e sensacao de inchaco. A drenagem ajuda a desinchar e trazer leveza.",
+      "Seu perfil indica tendência à retenção de líquidos e sensação de inchaço. A drenagem ajuda a desinchar e trazer leveza.",
     extra:
-      "Foco: melhorar circulacao linfatica, aliviar peso nas pernas e reduzir inchaco geral."
+      "Foco: melhorar a circulação linfática, aliviar peso nas pernas e reduzir inchaço geral.",
+    tips: [
+      "Mantenha boa hidratação ao longo do dia.",
+      "Pratique caminhadas leves para estimular a circulação.",
+      "Evite excesso de sal para reduzir retenção de líquidos."
+    ]
   },
   modeladora: {
     title: "Massagem Modeladora",
     description:
       "Seu objetivo principal parece ser contorno corporal e tratamento de gordura localizada.",
     extra:
-      "Foco: estimular tecido local, melhorar aspecto da pele e apoiar definicao da silhueta."
+      "Foco: estimular tecido local, melhorar aspecto da pele e apoiar definição da silhueta.",
+    tips: [
+      "Combine as sessões com exercícios de força e cardio.",
+      "Priorize uma alimentação equilibrada e rica em fibras.",
+      "Mantenha regularidade nas sessões para melhores resultados."
+    ]
   },
   relaxante: {
-    title: "Massagem Relaxante / Terapia de Tensao",
+    title: "Massagem Relaxante / Terapia de Tensão",
     description:
-      "Seu resultado sugere alta carga de estresse e tensao muscular. O ideal e uma sessao voltada para alivio de dor e relaxamento profundo.",
+      "Seu resultado sugere alta carga de estresse e tensão muscular. O ideal é uma sessão voltada para alívio de dor e relaxamento profundo.",
     extra:
-      "Foco: soltar musculatura, reduzir tensao em ombros/costas e promover bem-estar mental."
+      "Foco: soltar musculatura, reduzir tensão em ombros/costas e promover bem-estar mental.",
+    tips: [
+      "Inclua pausas curtas de respiração durante o dia.",
+      "Faça alongamentos de pescoço, ombros e costas diariamente.",
+      "Mantenha rotina de sono para reduzir tensão e cansaço."
+    ]
   },
   combinado: {
     title: "Protocolo Personalizado",
     description:
-      "Seu perfil ficou equilibrado entre mais de uma necessidade. A melhor opcao e combinar tecnicas na mesma sessao.",
+      "Seu perfil ficou equilibrado entre mais de uma necessidade. A melhor opção é combinar técnicas na mesma sessão.",
     extra:
-      "Sugestao: iniciar com drenagem ou relaxamento e finalizar com tecnicas localizadas, conforme avaliacao presencial."
+      "Sugestão: iniciar com drenagem ou relaxamento e finalizar com técnicas localizadas, conforme avaliação presencial.",
+    tips: [
+      "Alterne entre foco estético e relaxamento conforme sua semana.",
+      "Cuide da hidratação, alimentação e qualidade do sono.",
+      "Siga um plano personalizado de sessões para evolução contínua."
+    ]
   }
 };
 
@@ -116,6 +136,7 @@ const resultCard = document.getElementById("resultCard");
 const resultTitle = document.getElementById("resultTitle");
 const resultDescription = document.getElementById("resultDescription");
 const resultExtra = document.getElementById("resultExtra");
+const resultTips = document.getElementById("resultTips");
 const ctaLink = document.getElementById("ctaLink");
 const restartBtn = document.getElementById("restartBtn");
 
@@ -173,7 +194,7 @@ function renderQuestion() {
 
   backBtn.disabled = current === 0;
   nextBtn.disabled = selected === null;
-  nextBtn.textContent = current === questions.length - 1 ? "Ver resultado" : "Proxima";
+  nextBtn.textContent = current === questions.length - 1 ? "Ver resultado" : "Próxima";
   animateIn(quizCard);
 }
 
@@ -209,10 +230,16 @@ function showResult() {
 
   resultTitle.textContent = profile.title;
   resultDescription.textContent = profile.description;
-  resultExtra.textContent = `Atendimento recomendado por Daiani Oliveira. ${profile.extra} Pontuacao -> Drenagem: ${score.drenagem} | Modeladora: ${score.modeladora} | Relaxante: ${score.relaxante}.`;
+  resultExtra.textContent = `Atendimento recomendado por Daiani Oliveira. ${profile.extra} Pontuação -> Drenagem: ${score.drenagem} | Modeladora: ${score.modeladora} | Relaxante: ${score.relaxante}.`;
+  resultTips.innerHTML = "";
+  profile.tips.forEach((tip) => {
+    const li = document.createElement("li");
+    li.textContent = tip;
+    resultTips.appendChild(li);
+  });
 
   const message = encodeURIComponent(
-    `Oi! Fiz o quiz e meu resultado foi: ${profile.title}. Quero agendar uma avaliacao com Daiani Oliveira.`
+    `Oi! Fiz o quiz e meu resultado foi: ${profile.title}. Quero agendar uma avaliação com Daiani Oliveira.`
   );
 
   ctaLink.href = `https://wa.me/55996052565?text=${message}`;

@@ -6,7 +6,7 @@
   --line: #ddd8cd;
   --brand: #7b8f6a;
   --brand-dark: #667755;
-  --shadow: 0 14px 34px rgba(44, 37, 29, 0.09);
+  --shadow: 0 16px 38px rgba(44, 37, 29, 0.11);
   --radius: 18px;
 }
 
@@ -77,6 +77,7 @@ h1 {
   border-radius: var(--radius);
   padding: clamp(18px, 2.4vw, 30px);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(1px);
 }
 
 .quiz-header {
@@ -120,12 +121,12 @@ h1 {
   font: inherit;
   color: inherit;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
 }
 
 .option:hover {
-  border-color: #b8c5ac;
-  transform: translateY(-1px);
+  border-color: #a9b89b;
+  transform: translateY(-2px);
 }
 
 .option.active {
@@ -153,7 +154,7 @@ h1 {
   color: #fff;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
 }
 
 .btn:hover {
@@ -177,6 +178,13 @@ h1 {
   background: #f8f7f3;
 }
 
+.btn:focus-visible,
+.btn-ghost:focus-visible,
+.option:focus-visible {
+  outline: 3px solid rgba(123, 143, 106, 0.35);
+  outline-offset: 2px;
+}
+
 .hidden {
   display: none;
 }
@@ -184,7 +192,7 @@ h1 {
 .screen-animate {
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .screen-animate.is-visible {
@@ -208,6 +216,30 @@ h1 {
   background: #fafbf8;
   border-radius: 10px;
   color: #3d3a34;
+}
+
+.result-tips {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #e6e1d8;
+  background: #fffdf9;
+  border-radius: 12px;
+}
+
+.result-tips h3 {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+}
+
+.result-tips ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #3d3a34;
+}
+
+.result-tips li + li {
+  margin-top: 6px;
 }
 
 @media (max-width: 680px) {
