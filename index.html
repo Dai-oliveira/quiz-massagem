@@ -6,20 +6,29 @@
   <title>Quiz de Bem-Estar | Massagens</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="page">
-    <header class="top-logo">
-      <img src="logo.png" alt="Logo da Daiani Oliveira" class="logo-image" />
-    </header>
     <section class="hero">
+      <p class="brand-name">Daiani Oliveira</p>
       <p class="eyebrow">Avaliação rápida</p>
       <h1>Qual massagem combina mais com você hoje?</h1>
       <p class="subtitle">
-        Responda em menos de 2 minutos e receba uma recomendação clara para seu momento.
+        Responda em menos de 2 minutos, receba uma recomendação clara para seu momento e ganhe
+        <span class="subtitle-highlight">15% de desconto</span>.
       </p>
+      <p class="urgency-note">Oferta ativa para quem concluir o quiz hoje.</p>
+
+      <div class="social-proof" aria-label="Depoimentos de clientes">
+        <p class="social-title">Quem ja fez, recomenda:</p>
+        <div class="social-grid">
+          <article class="social-card">"Sai mais leve na primeira sessao. Atendimento excelente."</article>
+          <article class="social-card">"O quiz acertou meu perfil e facilitou muito a escolha."</article>
+          <article class="social-card">"Fechei pacote com desconto e senti resultado na primeira semana."</article>
+        </div>
+      </div>
     </section>
 
     <section class="quiz-card" id="quizCard" aria-live="polite">
@@ -43,6 +52,11 @@
       <p class="result-label">Resultado recomendado</p>
       <h2 id="resultTitle"></h2>
       <p id="resultDescription"></p>
+      <a id="offerLink" class="result-offer" href="#" aria-label="Resgatar desconto no WhatsApp">
+        <p class="offer-badge">Desconto especial</p>
+        <p class="offer-text">Voce respondeu todas as perguntas e ganhou 15% OFF.</p>
+        <p class="offer-subtext">Valido para sessao avulsa ou pacote de sessoes.</p>
+      </a>
 
       <div class="result-extra" id="resultExtra"></div>
       <div class="result-tips">
@@ -54,6 +68,9 @@
         <a id="ctaLink" class="btn" href="#">Agendar agora</a>
         <button id="restartBtn" class="btn btn-ghost" type="button">Refazer quiz</button>
       </div>
+      <p class="wa-feedback hidden" id="waFeedback" aria-live="polite">
+        Cupom QUIZ15 aplicado. Se o WhatsApp nao abrir, toque novamente no botao.
+      </p>
     </section>
   </main>
 

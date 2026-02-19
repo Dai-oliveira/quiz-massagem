@@ -138,6 +138,8 @@ const resultDescription = document.getElementById("resultDescription");
 const resultExtra = document.getElementById("resultExtra");
 const resultTips = document.getElementById("resultTips");
 const ctaLink = document.getElementById("ctaLink");
+const offerLink = document.getElementById("offerLink");
+const waFeedback = document.getElementById("waFeedback");
 const restartBtn = document.getElementById("restartBtn");
 
 let current = 0;
@@ -147,6 +149,12 @@ const scoreMax = {
   modeladora: 10,
   relaxante: 14
 };
+
+function setupWhatsAppFeedback(link) {
+  link.addEventListener("click", () => {
+    waFeedback.classList.remove("hidden");
+  });
+}
 
 function toScale10(value, max) {
   const normalized = Math.round((value / max) * 9) + 1;
@@ -268,11 +276,16 @@ function showResult() {
   });
 
   const message = encodeURIComponent(
-    `Oi! Fiz o quiz e meu resultado foi: ${profile.title}. Quero agendar uma avaliação com Daiani Oliveira.`
+    `Oi! Fiz o quiz, meu resultado foi: ${profile.title} e recebi 15% de desconto. Quero agendar minha sessão.`
   );
-
   ctaLink.href = `https://wa.me/55996052565?text=${message}`;
   ctaLink.textContent = "Falar com Daiani no WhatsApp";
+  offerLink.href = ctaLink.href;
+  ctaLink.target = "_blank";
+  offerLink.target = "_blank";
+  ctaLink.rel = "noopener noreferrer";
+  offerLink.rel = "noopener noreferrer";
+  waFeedback.classList.add("hidden");
 
   switchScreen(quizCard, resultCard);
 }
@@ -301,6 +314,9 @@ restartBtn.addEventListener("click", () => {
   switchScreen(resultCard, quizCard);
   renderQuestion();
 });
+
+setupWhatsAppFeedback(ctaLink);
+setupWhatsAppFeedback(offerLink);
 
 quizCard.classList.add("screen-animate");
 resultCard.classList.add("screen-animate");
