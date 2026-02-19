@@ -30,17 +30,21 @@ body {
   margin: 48px auto;
 }
 
-.hero {
-  margin-bottom: 24px;
+.top-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.brand-name {
-  margin: 0 0 6px;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #4e5f43;
+.logo-image {
+  max-width: min(220px, 60vw);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero {
+  margin-bottom: 24px;
 }
 
 .eyebrow {
@@ -55,7 +59,9 @@ body {
 h1,
 h2 {
   margin: 10px 0;
-  font-family: "Playfair Display", serif;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
@@ -228,7 +234,8 @@ h1 {
 
 .result-tips h3 {
   margin: 0 0 10px;
-  font-family: "Playfair Display", serif;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
   font-size: 1.05rem;
 }
 
